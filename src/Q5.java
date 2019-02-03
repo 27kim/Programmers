@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class Q5 {
 
     public static void main(String[] args) {
@@ -5,31 +10,29 @@ public class Q5 {
         Q5 q = new Q5();
 
 //        System.out.println(q.solution(new String[]{"car", "bed", "sun"}, 1));
-        System.out.println(q.solution("a B z", 2));
+        System.out.println(q.solution(new int[]{1, 5, 2, 6, 3, 7, 4}, new int[][]{{2, 5, 3}, {4, 4, 1}, {1, 7, 3}}));
 
     }
 
-    public String solution(String s, int n) {
-        StringBuffer sb = new StringBuffer();
+    public int[] solution(int[] array, int[][] commands) {
+        int[] answer = new int[commands.length];
 
-        for (int i = 0; i < s.length(); i++) {
-            char src = s.charAt(i);
+        for (int i = 0; i < commands.length; i++) {
 
-            if ('a' <= src && src <= 'z') {
-                src = (char) (src + n);
-                if (src > 'z'){
-                    src = (char) (src - 26);
-                }
+            int[] input = commands[i];
+
+            List<Integer> input2 = new ArrayList(100);
+
+            for (int j = input[0] - 1; j < input[1]; j++) {
+                input2.add(array[j]);
             }
 
-            if ('A' <= src && src <= 'Z') {
-                src = (char) (src + n);
-                if (src > 'Z') src = (char) (src - 26);
-            }
-            sb.append(src);
+            Collections.sort(input2);
+
+            answer[i] = input2.get(input[2] -1 );
         }
 
-        return sb.toString();
+        return answer;
     }
 
 }
