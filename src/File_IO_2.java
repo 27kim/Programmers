@@ -22,7 +22,7 @@ public class File_IO_2 {
                 int len = input.read(temp);         //inputSrc 에서 읽은 값을 temp 에 넣는다. 리턴 값은 읽어온 개수
                 output.write(temp, 0 , len);    //temp 의 0번째부터 len 까지 읽어온 값을 넣고 output 에 쓴다
 
-                outSrc = output.toByteArray();      //output 의 값을 outSrc에 넣는다 (Arrays.copy 를 사용함)
+                outSrc = output.toByteArray();      //output 의 값을 outSrc에 넣는다 (Arrays.copy 를 사용함 -> 기존 outSrc에 새로운거 더함)
 
                 printArrays(len, temp, outSrc);
             }
