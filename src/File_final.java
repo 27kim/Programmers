@@ -87,6 +87,7 @@ public class File_final {
             bufferedOutputStream.write(i);
         }
 
+
         //fos로 close 하면 bufferedOutputStream 에 남아있는 것들은 출력이 안됨
 //        fos.close();
         bufferedOutputStream.close();
