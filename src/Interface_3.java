@@ -13,6 +13,7 @@ class Interface_3{
 }
 
 interface Repairable {}
+
 class GroundUnit extends Unit_1 {
     GroundUnit(int hp) {
         super(hp);
@@ -31,7 +32,6 @@ class Unit_1 {
     Unit_1(int hp) {
         MAX_HP = hp;
     }
-    //...
 }
 
 class Tank_1 extends GroundUnit implements Repairable {
