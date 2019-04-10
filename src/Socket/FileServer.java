@@ -15,6 +15,8 @@ public class FileServer {
         InputStreamReader isr = new InputStreamReader(in);
         BufferedReader br = new BufferedReader(isr);
 
+        //		// console에서 사용자 입력하기 위한 부분
+		//BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str;
 
         while (true) {
